@@ -1,0 +1,157 @@
+:root {
+  color-scheme: light dark;
+  --bg: #12131a;
+  --surface: #1b1e27;
+  --surface-2: #232938;
+  --text: #f3f6ff;
+  --muted: #9fa8bf;
+  --accent: #67a4ff;
+  --win: #27b061;
+  --border: #30384d;
+}
+
+html[data-theme="light"] {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface-2: #f0f3fa;
+  --text: #1d2230;
+  --muted: #5c6578;
+  --accent: #2f67d8;
+  --win: #198c4e;
+  --border: #d7ddeb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 1.2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.app__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+.panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.status {
+  margin: 0;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(80px, 1fr));
+  gap: 0.5rem;
+}
+
+.cell {
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--surface);
+  color: var(--text);
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cell:hover,
+.cell:focus-visible {
+  outline: none;
+  background: var(--surface-2);
+}
+
+.cell--win {
+  background: color-mix(in srgb, var(--win) 25%, var(--surface));
+  border-color: var(--win);
+}
+
+.button,
+.select {
+  border-radius: 0.6rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 0.55rem 0.75rem;
+  font-size: 0.95rem;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.button--ghost {
+  background: transparent;
+}
+
+.stats {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--surface);
+  padding: 1rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.stats dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.stats div {
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+  background: var(--surface-2);
+}
+
+.stats dt {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.stats dd {
+  margin: 0.2rem 0 0;
+  font-weight: 700;
+}
+
+@media (max-width: 540px) {
+  .panel {
+    align-items: stretch;
+  }
+
+  .panel > * {
+    width: 100%;
+  }
+}
