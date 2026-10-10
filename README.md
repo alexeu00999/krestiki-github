@@ -1,5 +1,7 @@
 # krestiki-github
 
+commit one
+
 Статическая игра «Крестики-нолики» на чистом HTML/CSS/JS.
 
 ## Возможности
