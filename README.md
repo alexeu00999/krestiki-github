@@ -31,3 +31,9 @@ python3 -m http.server 8000
 - GitHub Pages
 - Netlify
 - Vercel (static output)
+
+## GitHub Pages URL
+
+После включения GitHub Pages проект будет доступен по адресу:
+
+https://alexeu00999.github.io/krestiki-github/
